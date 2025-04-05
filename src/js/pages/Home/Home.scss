@@ -1,3 +1,4 @@
+// Home.scss
 $brand-color: #552c10;
 $white: #fff;
 $black: #000;
@@ -24,8 +25,6 @@ body {
 ul {
   list-style-type: none;
 }
-
-
 
 a {
   text-decoration: none;
@@ -136,8 +135,10 @@ a {
 .second-section,
 .third-section {
   height: 100vh;
+
   .container {
     height: 100%;
+
     .content-wrapper {
       display: flex;
       align-items: center;
@@ -214,10 +215,9 @@ a {
       width: 13vw;
       position: absolute;
       top: -80px;
-      left: 22%;
-      transform: translateX(-50%);
+      left: 50%;
+      transform: translateX(-50%) rotate(-50deg);
       filter: drop-shadow(0 10px 5px rgba(37, 35, 34, 0.07));
-      transform: rotate(-50deg);
       z-index: 2;
     }
   }
@@ -230,7 +230,6 @@ a {
   font-size: 1rem;
   color: $brand-color;
 }
-
 
 .scroll-snap-container {
   height: 100vh;

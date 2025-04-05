@@ -8,52 +8,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   useEffect(() => {
-    const cookie = document.getElementById("cookie");
-    const chips = document.getElementById("chips");
+    const cookieEl = document.getElementById("cookie");
+    const chipsEl = document.getElementById("chips");
 
-    // Cookie Entry
+    if (!cookieEl || !chipsEl) return;
+
+    // Initial entrance animation for cookie
     gsap.fromTo(
-      cookie,
-      {
-        y: -200,
-        rotate: -60,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        rotate: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power2.out",
-      }
+      cookieEl,
+      { y: -200, rotate: -60, opacity: 0 },
+      { y: 0, rotate: 0, opacity: 1, duration: 1.2, ease: "power2.out" }
     );
 
-    // Scroll-triggered Cookie motion
-    const cookieTimeline = gsap.timeline({
+    // Cookie scroll animation sequence across multiple sections
+    gsap.timeline({
       scrollTrigger: {
-        trigger: "." + style["second-section"],
+        trigger: `.${style["second-section"]}`,
         start: "top bottom",
         end: "bottom center",
         scrub: 1,
       },
-    });
-
-    cookieTimeline
-      .to(cookie, {
+    })
+      .to(cookieEl, {
         left: "10%",
         top: "70%",
-        // rotate: 50,
         duration: 0.5,
         ease: "power2.inOut",
       })
-      .to(cookie, {
+      .to(cookieEl, {
         left: "5%",
         top: "135%",
         duration: 0.5,
         rotate: 60,
         ease: "none",
       })
-      .to(cookie, {
+      .to(cookieEl, {
         top: "calc(215% + 17.5vh)",
         left: "50%",
         x: "-50%",
@@ -63,17 +52,15 @@ const Home = () => {
         ease: "power2.inOut",
       });
 
-    const chipsTimeline = gsap.timeline({
+    // Chips float animation on scroll
+    gsap.timeline({
       scrollTrigger: {
-        trigger: "." + style["second-section"],
+        trigger: `.${style["second-section"]}`,
         start: "top bottom",
         end: "bottom center",
-        duration: 1,
         scrub: true,
       },
-    });
-
-    chipsTimeline.to(chips, {
+    }).to(chipsEl, {
       left: "80%",
       top: "130%",
       rotate: 360,
@@ -83,104 +70,103 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <main className="smooth-scroll">
-        <section className={style["hero-section"]}>
-          <div className={style["container"]}>
-            <nav>
-              <h2>Cookie World</h2>
-              <div className={style["menu"]}>
-                <ul>
-                  <li>
-                    <a href="#">Home</a>
-                  </li>
-                  <li>
-                    <a href="#">Products</a>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+    <main className="smooth-scroll">
+      <section className={style["hero-section"]}>
+        <div className={style.container}>
+          <nav>
+          <a href="/">
+            <h2>Cookie World</h2>
+            </a>
+            <div className={style.menu}>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
 
-            <div className={style["hero-content"]}>
-              <h1>Cookie</h1>
-              <img
-                src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833461/cookie_qoa4wl.webp"
-                id="cookie"
-                className={style["cookie"]}
-              />
-              <img
-                src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833368/choco-chips_hsrmtl.png"
-                id="chips"
-                className={style["choco-chips"]}
-              />
-              <img
-                src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833599/peanut_sxx4ps.png"
-                className={style["peanut"]}
-              />
-              <img
-                src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833538/gem_pqr4oj.png"
-                className={style["gem"]}
-              />
+          <div className={style["hero-content"]}>
+            <h1>Cookie</h1>
+            <img
+              src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833461/cookie_qoa4wl.webp"
+              id="cookie"
+              className={style.cookie}
+              alt="Cookie"
+            />
+            <img
+              src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833368/choco-chips_hsrmtl.png"
+              id="chips"
+              className={style["choco-chips"]}
+              alt="Choco Chips"
+            />
+            <img
+              src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833599/peanut_sxx4ps.png"
+              className={style.peanut}
+              alt="Peanut"
+            />
+            <img
+              src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833538/gem_pqr4oj.png"
+              className={style.gem}
+              alt="Gem"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className={style["second-section"]}>
+        <div className={style.container}>
+          <div className={style["content-wrapper"]}>
+            <div className={style["img-section"]}></div>
+            <div className={style["content-section"]}>
+              <h2>TASTE THE DIFFERENCE.</h2>
+              <div className={style["sub-heading"]}>
+                Real Eggs, Real Butter, Real Sugar.
+              </div>
+              <p>
+              Cookie World was founded in 2020 during the height of the
+                Covid-19 pandemic by Elise and Matt Thomas. Working behind the
+                scenes to open the first Cookie World. location, Elise baked her
+                signature cookie recipes using real eggs, real butter, and real
+                cane sugar in her home, preparing hundreds of boxes weekly by
+                hand for driveway pick-up.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className={style["second-section"]}>
-          <div className={style["container"]}>
-            <div className={style["content-wrapper"]}>
-              <div className={style["img-section"]}></div>
-              <div className={style["content-section"]}>
-                <h2>TASTE THE DIFFERENCE.</h2>
-                <div className={style["sub-heading"]}>
-                  Real Eggs, Real Butter, Real Sugar.
-                </div>
-                <p>
-                  Cookie Co. was founded in 2020 during the height of the
-                  Covid-19 pandemic by Elise and Matt Thomas.
-                </p>
-              </div>
+      <section className={style["third-section"]}>
+        <div className={style.container}>
+          <div className={style["content-wrapper"]}>
+            <div className={style["product-card"]}>
+              <img
+                src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833497/frosted-sugar_ungydw.webp"
+                className={style["cooki-sm"]}
+                alt="Frosted Sugar"
+              />
+              <h4>FROSTED SUGAR</h4>
+              <a href="#" className={style["cta-btn"]}>Buy Now</a>
+            </div>
+            <div className={style["product-card"]}>
+              <h4>MONSTER</h4>
+              <a href="#" className={style["cta-btn"]}>Buy Now</a>
+            </div>
+            <div className={style["product-card"]}>
+              <img
+                src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833557/oreo_jvmunv.webp"
+                className={style["cooki-sm"]}
+                alt="Oreo"
+              />
+              <h4>OREO</h4>
+              <a href="#" className={style["cta-btn"]}>Buy Now</a>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className={style["third-section"]}>
-          <div className={style["container"]}>
-            <div className={style["content-wrapper"]}>
-              <div className={style["product-card"]}>
-                <img
-                  src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833497/frosted-sugar_ungydw.webp"
-                  className={style["cooki-sm"]}
-                />
-                <h4>FROSTED SUGAR</h4>
-                <a href="#" className={style["cta-btn"]}>
-                  Buy Now
-                </a>
-              </div>
-              <div className={style["product-card"]}>
-                <h4>MONSTER</h4>
-                <a href="#" className={style["cta-btn"]}>
-                  Buy Now
-                </a>
-              </div>
-              <div className={style["product-card"]}>
-                <img
-                  src="https://res.cloudinary.com/dlnflk9fd/image/upload/v1743833557/oreo_jvmunv.webp"
-                  className={style["cooki-sm"]}
-                />
-                <h4>OREO</h4>
-                <a href="#" className={style["cta-btn"]}>
-                  Buy Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <Footer />
-      </main>
-    </>
+      <Footer />
+    </main>
   );
 };
 
