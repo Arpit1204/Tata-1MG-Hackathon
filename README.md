@@ -3,6 +3,7 @@
 This project was created as part of the **Tata 1mg Hackathon**, where the focus was on **frontend excellence**, **animation**, and **UI/UX design**. The project showcases smooth scroll-based animations using GSAP and Locomotive Scroll, while following design standards offered by the **Catalyst** design system.
 
 
+### Video Link of explanation : https://www.loom.com/share/8a5c5d9330f64cb69306ed70845dcaee?sid=9fbb0411-4a02-4032-91f7-d57cff3bffc1 ###
 
 ## 🚀 Tech Stack Used
 
