@@ -1,5 +1,5 @@
 {
-    "name": "trail-app",
+    "name": "tata-1mg-hackathon",
     "version": "1.0.0",
     "scripts": {
         "start": "catalyst start",
@@ -20,10 +20,17 @@
     },
     "dependencies": {
         "@loadable/component": "^5.16.3",
+        "@react-spring/web": "^9.7.5",
         "@reduxjs/toolkit": "1.9.3",
+        "@stitches/react": "^1.2.8",
         "@tata1mg/router": "^0.0.1-beta.6",
         "catalyst-core": "^0.0.1-beta.12",
-        "react-redux": "^8.1.3"
+        "gsap": "^3.12.7",
+        "locomotive-scroll": "^4.1.4",
+        "react-locomotive-scroll": "^0.2.2",
+        "react-redux": "^8.1.3",
+        "react-router": "^7.4.1",
+        "sass": "^1.86.3"
     },
     "devDependencies": {
         "eslint": "^8.26.0",
