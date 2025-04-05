@@ -1,0 +1,247 @@
+$brand-color: #552c10;
+$white: #fff;
+$black: #000;
+$main-font: 'Montserrat', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $main-font;
+  font-weight: 500;
+  background-color: $white;
+}
+
+.container {
+  width: 80vw;
+  margin: auto;
+  padding: 0 1vw;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+.cta-btn {
+  border: 1px solid;
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
+  color: $brand-color;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $brand-color;
+    color: $white;
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  position: relative;
+
+  .container {
+    height: 100%;
+
+    nav {
+      padding: 2vh 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: 2rem;
+        color: $brand-color;
+      }
+
+      .menu ul {
+        display: flex;
+        gap: 2vw;
+
+        li a {
+          color: $black;
+          font-weight: 500;
+
+          &:hover {
+            color: $brand-color;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .hero-content {
+      height: calc(100% - 70px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      h1 {
+        font-size: 20vw;
+        color: $brand-color;
+        z-index: 2;
+      }
+
+      .cookie,
+      .choco-chips,
+      .peanut,
+      .gem {
+        position: absolute;
+        filter: drop-shadow(0 10px 5px rgba(37, 35, 34, 0.07));
+        transition: all 0.3s ease;
+      }
+
+      .cookie {
+        width: 22vw;
+        top: 30%;
+        left: 35%;
+        transform: rotate(90deg);
+        z-index: 1;
+      }
+
+      .choco-chips {
+        width: 12vw;
+        top: 60%;
+        left: 35%;
+        z-index: 0;
+      }
+
+      .peanut {
+        width: 12vw;
+        left: 90%;
+        top: 45%;
+        transform: translate(-40%, -90%);
+        z-index: -1;
+      }
+
+      .gem {
+        width: 3vw;
+        left: 4%;
+        top: 60%;
+        z-index: 0;
+      }
+    }
+  }
+}
+
+.second-section,
+.third-section {
+  height: 100vh;
+  .container {
+    height: 100%;
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+
+      .img-section {
+        flex-basis: 50%;
+      }
+
+      .content-section {
+        flex-basis: 50%;
+
+        h2 {
+          font-size: 5vw;
+          color: $brand-color;
+          line-height: 1.1;
+        }
+
+        .sub-heading {
+          font-size: 1.5vw;
+          margin: 1vh 0 2vh;
+          color: $brand-color;
+        }
+
+        p {
+          line-height: 1.6;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.second-section {
+  background-color: rgba(85, 44, 16, 0.2);
+}
+
+.third-section {
+  background-color: $white;
+
+  .product-card {
+    background-color: $brand-color;
+    color: $white;
+    position: relative;
+    flex-basis: 30%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5vh 2vh;
+    border-radius: 30px;
+    text-align: center;
+    overflow: visible;
+
+    h4 {
+      font-size: 2vw;
+      margin-top: 2rem;
+    }
+
+    .cta-btn {
+      color: $white;
+      margin-top: 1rem;
+      border-color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $brand-color;
+      }
+    }
+
+    .cooki-sm {
+      width: 13vw;
+      position: absolute;
+      top: -80px;
+      left: 22%;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 10px 5px rgba(37, 35, 34, 0.07));
+      transform: rotate(-50deg);
+      z-index: 2;
+    }
+  }
+}
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  color: $brand-color;
+}
+
+
+.scroll-snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.hero-section,
+.second-section,
+.third-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
