@@ -2,7 +2,7 @@
 
 This project was created as part of the **Tata 1mg Hackathon**, where the focus was on **frontend excellence**, **animation**, and **UI/UX design**. The project showcases smooth scroll-based animations using GSAP and Locomotive Scroll, while following design standards offered by the **Catalyst** design system.
 
-<video controls src="Screen Recording 2025-04-05 at 5.02.45 PM.mov" title="Title"></video>
+
 
 ## 🚀 Tech Stack Used
 
@@ -15,7 +15,7 @@ This project was created as part of the **Tata 1mg Hackathon**, where the focus 
 
 ---
 
-![alt text](<Screenshot 2025-04-05 at 5.03.40 PM.png>)
+
 
 ## 🧪 What is Catalyst?
 
@@ -29,7 +29,6 @@ In this project, the **visual structure**, color palette, and spacing were inspi
 
 ---
 
-![alt text](<Screenshot 2025-04-05 at 5.03.55 PM.png>)
 
 
 ## ✨ Key Features
@@ -53,7 +52,7 @@ In this project, the **visual structure**, color palette, and spacing were inspi
 - **Second section** explains the story and quality of the cookies.
 - **Third section** promotes product offerings.
 
-![alt text](<Screenshot 2025-04-05 at 5.04.09 PM.png>)
+
 
 Built with ❤️ By Arpit & Akshith.
 
