@@ -47,12 +47,6 @@ In this project, the **visual structure**, color palette, and spacing were inspi
 - Cookies like **Frosted Sugar**, **Oreo**, and **Monster** are visually highlighted.
 - Includes product cards and mock CTA buttons.
 
-### 🧁 Multi-section Layout
-- **Hero section** introduces the cookie brand visually.
-- **Second section** explains the story and quality of the cookies.
-- **Third section** promotes product offerings.
-
-
 
 Built with ❤️ By Arpit & Akshith.
 
